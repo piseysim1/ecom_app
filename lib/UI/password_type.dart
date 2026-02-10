@@ -125,6 +125,7 @@ class _PasswordTypeState extends State<PasswordType> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
+                                    settings: const RouteSettings(name: '/password_recovery'),
                                     builder: (context) => PasswordRecovery(),
                                   ),
                                 );

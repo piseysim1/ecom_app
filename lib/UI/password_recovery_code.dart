@@ -1,4 +1,5 @@
 import 'package:e_comapp/UI/Alert_info.dart';
+import 'package:e_comapp/UI/hello_card.dart';
 import 'package:e_comapp/UI/newpasssword.dart';
 import 'package:e_comapp/contant/image.dart';
 import 'package:e_comapp/widget/button_cus.dart';
@@ -19,7 +20,7 @@ class _PasswordRecoveryCodeState extends State<PasswordRecoveryCode> {
   bool isError = false;
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: SizedBox(
         width: double.infinity,
         height: double.infinity,
@@ -110,7 +111,7 @@ class _PasswordRecoveryCodeState extends State<PasswordRecoveryCode> {
                       PasswordDot(
                         totalCount: PasswordRecoveryCode.pinLength,
                         fillCount: _controller.text.length,
-                          isError: isError,
+                        isError: isError,
                       ),
                       Opacity(
                         opacity: 0,
@@ -124,7 +125,8 @@ class _PasswordRecoveryCodeState extends State<PasswordRecoveryCode> {
                             setState(() {
                               isError = false;
                             });
-                            if (value.length == PasswordRecoveryCode.pinLength) {
+                            if (value.length ==
+                                PasswordRecoveryCode.pinLength) {
                               if (value == correctPin) {
                                 Navigator.push(
                                   context,
@@ -154,20 +156,26 @@ class _PasswordRecoveryCodeState extends State<PasswordRecoveryCode> {
                 SizedBox(height: 200),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 70, vertical: 10),
-                  child: ButtonCus(
-                    BGbotton: Color(0xFFFF5790),
-                    buttonName: "Send Again",
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => AlertInfo(),
-                        ),
-                      );
-                    },
+                  child: SizedBox(
+                    child: ButtonCus(
+                      BGbotton: Color(0xFFFF5790),
+                      buttonName: "Send Again",
+                          onPressed: () => showDialog(
+                            context: context,
+                            builder: (context) => AlertInfo(
+                              // onTap: () {
+                              //   Navigator.push(
+                              //     context,
+                              //     MaterialPageRoute(
+                              //       builder: (context) => HelloCard(),
+                              //     ),
+                              //   );
+                              // },
+                            ),
+                          ),
+                    ),
                   ),
                 ),
-
                 SizedBox(height: 10),
                 const Center(
                   child: Text(

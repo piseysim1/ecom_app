@@ -91,7 +91,7 @@ class _PasswordRecoveryState extends State<PasswordRecovery> {
                       textColor: Color(0xFF004CFF),
                       fontWeight: FontWeight.w700,
                     ),
-                      SizedBox(height: 15),
+                    SizedBox(height: 15),
                     ChipSelect(
                       chipColor: Color(0xFFF8CECE),
                       isSelected: false,
@@ -103,19 +103,24 @@ class _PasswordRecoveryState extends State<PasswordRecovery> {
                 ),
                 SizedBox(height: 150),
                 SizedBox(
-                height: 50,
-                width: 120,
-                child: ButtonCus(
-                  BGbotton: Color(0xFF004CFF),
-                  buttonName: "Next",
-                  onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=> PasswordRecoveryCode()));
-                  },
+                  height: 50,
+                  width: 120,
+                  child: ButtonCus(
+                    BGbotton: Color(0xFF004CFF),
+                    buttonName: "Next",
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          settings: const RouteSettings(name: '/password recovery code'),
+                          builder: (context) => PasswordRecoveryCode(),
+                        ),
+                      );
+                    },
+                  ),
                 ),
-              ),
-              SizedBox(height: 20),
-              const Center(
-
+                SizedBox(height: 20),
+                const Center(
                   child: Text(
                     "Cancel",
                     style: TextStyle(fontSize: 14, color: Color(0xFF6D7077)),

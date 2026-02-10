@@ -94,37 +94,32 @@ class Newpasssword extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
-                    
                   ],
                 ),
-                SizedBox(height: 90,)
-                ,
+                SizedBox(height: 90),
                 Padding(
                   padding: const EdgeInsets.all(30),
                   child: SizedBox(
                     width: 50,
                     height: 50,
                     child: ButtonCus(
-                          BGbotton: Color(0xFF004CFF),
-                          buttonName: "Save",
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => HelloCard()),
-                            );
-                          },
-                        ),
+                      BGbotton: Color(0xFF004CFF),
+                      buttonName: "Save",
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => HelloCard()),
+                        );
+                      },
+                    ),
                   ),
                 ),
-                    const Center(
-                      child: Text(
-                        "Cancel",
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: Color(0xFF6D7077),
-                        ),
-                      ),
-                    ),
+                const Center(
+                  child: Text(
+                    "Cancel",
+                    style: TextStyle(fontSize: 14, color: Color(0xFF6D7077)),
+                  ),
+                ),
               ],
             ),
           ],

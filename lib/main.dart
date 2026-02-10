@@ -1,7 +1,7 @@
-import 'package:e_comapp/UI/Alert_info.dart';
-import 'package:e_comapp/UI/newpasssword.dart';
+
 import 'package:e_comapp/UI/password_recovery_code.dart';
-import 'package:e_comapp/UI/password_type.dart';
+import 'package:e_comapp/UI/starter_screen.dart';
+import 'package:e_comapp/contant/color.dart';
 import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
 
@@ -21,27 +21,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         dividerTheme: DividerThemeData(color: Colors.transparent),
         scaffoldBackgroundColor: Colors.white,
+        appBarTheme: AppBarTheme(backgroundColor: whilteColor),
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: PasswordRecoveryCode(),
     );
-  }
-}
-
-class PasswordTypeCode {
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold();
   }
 }
