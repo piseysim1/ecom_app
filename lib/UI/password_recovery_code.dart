@@ -1,5 +1,4 @@
 import 'package:e_comapp/UI/Alert_info.dart';
-import 'package:e_comapp/UI/hello_card.dart';
 import 'package:e_comapp/UI/newpasssword.dart';
 import 'package:e_comapp/contant/image.dart';
 import 'package:e_comapp/widget/button_cus.dart';
