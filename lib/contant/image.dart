@@ -10,3 +10,8 @@ const String flagicon = "assets/images/FLAG.png";
 const String logopeople = "assets/images/artist-2 1.png";
 const String checkicon = "assets/images/Icon feather-check.png";
 const String Exclamtion = "assets/images/Exclamation.png";
+const String bluebackground8 = "assets/images/bubble 07 (2).png";
+const String slide1 = "assets/images/slide_1.png";
+const String slide2 = "assets/images/Placeholder_01.jpg";
+const String slide3 = "assets/images/Placeholder_01.jpg";
+

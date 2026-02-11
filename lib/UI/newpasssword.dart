@@ -1,4 +1,4 @@
-import 'package:e_comapp/UI/hello_card.dart';
+import 'package:e_comapp/UI/hello_card_dashboard.dart';
 import 'package:e_comapp/contant/image.dart';
 import 'package:e_comapp/widget/button_cus.dart';
 import 'package:e_comapp/widget/text_form_cus.dart';
@@ -108,7 +108,7 @@ class Newpasssword extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => HelloCard()),
+                          MaterialPageRoute(builder: (context) => HelloCardDashboard()),
                         );
                       },
                     ),
