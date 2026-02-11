@@ -14,4 +14,6 @@ const String bluebackground8 = "assets/images/bubble 07 (2).png";
 const String slide1 = "assets/images/slide_1.png";
 const String slide2 = "assets/images/Placeholder_01.jpg";
 const String slide3 = "assets/images/Placeholder_01.jpg";
-
+const String iconsvg1 = "assets/images/Icon.svg";
+const String iconsvg2 = "assets/images/Icon1.svg";
+const String iconsvg3 = "assets/images/Icon feather-settings.svg";

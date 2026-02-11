@@ -1,7 +1,9 @@
 import 'package:e_comapp/UI/hello_card_dashboard.dart';
+import 'package:e_comapp/UI/main/homepage_screen.dart';
 import 'package:e_comapp/UI/password_recovery_code.dart';
 import 'package:e_comapp/UI/starter_screen.dart';
 import 'package:e_comapp/contant/color.dart';
+import 'package:e_comapp/widget/profile_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
 
@@ -24,7 +26,7 @@ class MyApp extends StatelessWidget {
         appBarTheme: AppBarTheme(backgroundColor: whilteColor),
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: HelloCardDashboard(),
+      home: HomepageScreen(),
     );
   }
 }
