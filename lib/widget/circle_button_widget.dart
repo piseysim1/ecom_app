@@ -5,35 +5,52 @@ import 'package:flutter_svg/flutter_svg.dart';
 class CircleButtonWidget extends StatelessWidget {
   const CircleButtonWidget({
     super.key,
+    this.iconImage = "",
+    this.svgIcon = "",
     this.onPressed,
-    required this.iconsvg,
+    this.bgColor = greyColor,
+    this.isShowBadg = false,
     this.width = 40,
     this.height = 40,
   });
+  final String iconImage;
   final VoidCallback? onPressed;
-  final String iconsvg;
-  final double width ;
-  final double height ;
+  final Color bgColor;
+  final bool isShowBadg;
+  final double width;
+  final double height;
+  final String svgIcon;
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 35,
-      width: 35,
-      child: ElevatedButton(
-        onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.zero,
-          minimumSize: Size.zero,
-          backgroundColor: const Color.fromARGB(255, 255, 249, 249),
-          shape: const CircleBorder(),
-        ),
-        child: SvgPicture.asset(
-          iconsvg,
-          height: height * 0.4,
-          width: width * 0.4,
-          fit: BoxFit.contain,
-          color: mainblue,
+    return Padding(
+      padding: const EdgeInsets.only(left: 8),
+      child: Badge(
+        smallSize: 13,
+        backgroundColor: mainblue,
+        isLabelVisible: isShowBadg,
+        child: ElevatedButton(
+          onPressed: onPressed,
+          style: ElevatedButton.styleFrom(
+            shape: const CircleBorder(),
+            minimumSize: Size(width, height),
+            padding: EdgeInsets.zero,
+            backgroundColor: bgColor,
+          ),
+          child: svgIcon.isNotEmpty
+              ? SvgPicture.asset(
+                  svgIcon,
+                  width: width * 0.4,
+                  height: height * 0.4,
+                  colorFilter: ColorFilter.mode(mainblue, BlendMode.srcIn),
+                  fit: BoxFit.contain,
+                )
+              : Image.asset(
+                  iconImage,
+                  width: width * 0.4,
+                  height: height * 0.4,
+                  fit: BoxFit.contain,
+                ),
         ),
       ),
     );
