@@ -1,3 +1,6 @@
+import 'package:e_comapp/UI/main/components/categories_item.dart';
+import 'package:e_comapp/UI/main/components/most_popular.dart';
+import 'package:e_comapp/UI/main/components/new_item.dart';
 import 'package:e_comapp/contant/color.dart';
 import 'package:e_comapp/contant/image.dart';
 import 'package:e_comapp/widget/circle_button_widget.dart';
@@ -31,8 +34,8 @@ class HomepageScreen extends StatelessWidget {
           ],
         ),
         actions: [
-          CircleButtonWidget(svgIcon: iconsvg1, isShowBadg: false),
-          CircleButtonWidget(svgIcon: iconsvg2, isShowBadg: true),
+          CircleButtonWidget(svgIcon: iconsvg2, isShowBadg: false),
+          CircleButtonWidget(svgIcon: iconsvg1, isShowBadg: true),
           CircleButtonWidget(svgIcon: iconsvg3, isShowBadg: false),
         ],
       ),
@@ -49,8 +52,9 @@ class HomepageScreen extends StatelessWidget {
               recentReviewWidget(),
               myOrdersWidget(),
               storiesWidget(),
-              newItem(),
-              _mostPopular(),
+              NewItem(),
+              MostPopular(),
+              CategoriesItem()
             ],
           ),
         ],
@@ -131,7 +135,7 @@ class HomepageScreen extends StatelessWidget {
 }
 
 Widget myOrdersWidget() {
-  List<String> myOrder = ['To Pay', 'Recieve', 'To Recieve'];
+  List<String> myOrder = ['To Pay', 'To Recieve', 'Recieve'];
   return Headertitle(
     lable_text: 'My Orders',
     hasSeeAll: false,
@@ -230,135 +234,3 @@ Widget _buildstoryCard() {
   );
 }
 
-Widget newItem() {
-  return Headertitle(
-    lable_text: "New Items",
-    hasSeeAll: true,
-    child: SizedBox(
-      height: 270,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: 5,
-        itemBuilder: (context, index) {
-          return _itemImage();
-        },
-      ),
-    ),
-  );
-}
-
-Widget _itemImage() {
-  return Container(
-    width: 150,
-    padding: const EdgeInsets.all(12),
-    decoration: BoxDecoration(
-      color: Colors.white,
-      borderRadius: BorderRadius.circular(20),
-      boxShadow: [
-        BoxShadow(
-          color: Colors.black.withOpacity(0.05),
-          blurRadius: 10,
-          spreadRadius: 2,
-          offset: const Offset(0, 5), // Changes position of shadow
-        ),
-      ],
-    ),
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(15),
-          child: Image.network(
-            "https://tse3.mm.bing.net/th/id/OIP.L_fHNhGC_83eIzFgtkiBHAHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
-            height: 150,
-            width: 190,
-            fit: BoxFit.cover,
-          ),
-        ),
-        SizedBox(height: 8),
-        Text(
-          "Lorem ipsum dolor sit amet consectetur.",
-          maxLines: 2,
-          overflow: TextOverflow.ellipsis,
-        ),
-        SizedBox(height: 8),
-        Text(
-          "\$17,00",
-          style: GoogleFonts.montserrat(
-            // Using the font here
-            fontSize: 16,
-            fontWeight: FontWeight.w700,
-            color: Colors.black87,
-            height: 1.2,
-          ),
-        ),
-      ],
-    ),
-  );
-}
-
-Widget _mostPopular() {
-  return Headertitle(
-    lable_text: "Most Popular",
-    hasSeeAll: true,
-    child: SizedBox(
-      height: 270,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: 5,
-        itemBuilder: (context, index) {
-          return _mostPopularImage();
-        },
-      ),
-    ),
-  );
-}
-Widget _mostPopularImage(){
- return Container(
-    width: 150,
-    padding: const EdgeInsets.all(12),
-    decoration: BoxDecoration(
-      color: Colors.white,
-      borderRadius: BorderRadius.circular(20),
-      boxShadow: [
-        BoxShadow(
-          color: Colors.black.withOpacity(0.05),
-          blurRadius: 10,
-          spreadRadius: 2,
-          offset: const Offset(0, 5), // Changes position of shadow
-        ),
-      ],
-    ),
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(15),
-          child: Image.network(
-            "https://tse2.mm.bing.net/th/id/OIP.L-BRMuvYyRzF21O1-C-XSAAAAA?rs=1&pid=ImgDetMain&o=7&rm=3",
-            height: 150,
-            width: 190,
-            fit: BoxFit.cover,
-          ),
-        ),
-        SizedBox(height: 8),
-        Text(
-          "Lorem ipsum dolor sit amet consectetur.",
-          maxLines: 2,
-          overflow: TextOverflow.ellipsis,
-        ),
-        SizedBox(height: 8),
-        Text(
-          "\$17,00",
-          style: GoogleFonts.montserrat(
-            // Using the font here
-            fontSize: 16,
-            fontWeight: FontWeight.w700,
-            color: Colors.black87,
-            height: 1.2,
-          ),
-        ),
-      ],
-    ),
-  );
-}

@@ -9,8 +9,8 @@ class ProfileWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: width+20,
-      height: height+20,
+      width: width+10,
+      height: height+10,
       // padding: EdgeInsets.all(5),
       decoration: BoxDecoration(
         shape: BoxShape.circle,
@@ -30,6 +30,7 @@ class ProfileWidget extends StatelessWidget {
           height: height,
           decoration: BoxDecoration(shape: BoxShape.circle),
           child: ClipRRect(
+            
             borderRadius: BorderRadius.circular(40),
             child: Image.asset(image, fit: BoxFit.cover),
           ),

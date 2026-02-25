@@ -14,9 +14,9 @@ const String bluebackground8 = "assets/images/bubble 07 (2).png";
 const String slide1 = "assets/images/slide_1.png";
 const String slide2 = "assets/images/Placeholder_01.jpg";
 const String slide3 = "assets/images/Placeholder_01.jpg";
-const String iconsvg1 = "assets/images/Icon.svg";
+const String iconsvg1 = "assets/images/scan-svgrepo-com.svg";
 const String iconsvg4 = "assets/images/Icon.png";
-const String iconsvg2 = "assets/images/Icon1.svg";
+const String iconsvg2 = "assets/images/menu-alt-04-svgrepo-com.svg";
 const String iconsvg3 = "assets/images/Icon feather-settings.svg";
 const String play = "assets/images/play-button-svgrepo-com.svg";
 
