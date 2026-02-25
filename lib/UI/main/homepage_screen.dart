@@ -1,6 +1,8 @@
 import 'package:e_comapp/UI/main/components/categories_item.dart';
+import 'package:e_comapp/UI/main/components/flash_sale.dart';
 import 'package:e_comapp/UI/main/components/most_popular.dart';
 import 'package:e_comapp/UI/main/components/new_item.dart';
+import 'package:e_comapp/UI/main/components/topproduct.dart';
 import 'package:e_comapp/contant/color.dart';
 import 'package:e_comapp/contant/image.dart';
 import 'package:e_comapp/widget/circle_button_widget.dart';
@@ -21,7 +23,7 @@ class HomepageScreen extends StatelessWidget {
         title: Row(
           spacing: 16,
           children: [
-            ProfileWidget(width: 30, height: 30),
+            ProfileWidget(width: 30, height: 30, imageUrl: "https://tse3.mm.bing.net/th/id/OIP.L_fHNhGC_83eIzFgtkiBHAHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",),
             Chip(
               side: BorderSide(color: mainblue),
               shape: RoundedRectangleBorder(
@@ -54,7 +56,9 @@ class HomepageScreen extends StatelessWidget {
               storiesWidget(),
               NewItem(),
               MostPopular(),
-              CategoriesItem()
+              CategoriesItem(),
+              FlashSale(),
+              Topproduct()
             ],
           ),
         ],
@@ -72,7 +76,7 @@ class HomepageScreen extends StatelessWidget {
   Widget recentReviewWidget() {
     return Headertitle(
       lable_text: "Recently viewed",
-      hasSeeAll: false,
+      hasSeeAll: "",
       child: SizedBox(
         height: 80,
         child: ListView.separated(
@@ -81,7 +85,7 @@ class HomepageScreen extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           physics: BouncingScrollPhysics(),
           itemBuilder: (context, index) {
-            return ProfileWidget(width: 48, height: 48);
+            return ProfileWidget(width: 48, height: 48, imageUrl: "https://tse3.mm.bing.net/th/id/OIP.L_fHNhGC_83eIzFgtkiBHAHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",);
           },
           separatorBuilder: (BuildContext context, int index) {
             return SizedBox(width: 5);
@@ -138,7 +142,7 @@ Widget myOrdersWidget() {
   List<String> myOrder = ['To Pay', 'To Recieve', 'Recieve'];
   return Headertitle(
     lable_text: 'My Orders',
-    hasSeeAll: false,
+    hasSeeAll: "",
     child: Row(
       spacing: 12,
       children: List.generate(myOrder.length, (index) {
@@ -170,7 +174,7 @@ Widget myOrdersWidget() {
 Widget storiesWidget() {
   return Headertitle(
     lable_text: "Stories",
-    hasSeeAll: false,
+    hasSeeAll: "",
     child: SizedBox(
       height: 170,
       child: ListView.builder(

@@ -5,11 +5,13 @@ class Headertitle extends StatelessWidget {
     super.key,
     required this.lable_text,
     this.child,
+    this.rightChild,
     required this.hasSeeAll,
   });
   final String lable_text;
   final Widget? child;
-  final bool hasSeeAll;
+  final Widget? rightChild;
+  final String hasSeeAll;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -24,7 +26,7 @@ class Headertitle extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.w700, fontSize: 23),
             ),
             // Logic: Only build the "See All" Row if hasSeeAll is true
-            if (hasSeeAll)
+            if (hasSeeAll.isNotEmpty) ...[
               Row(
                 children: [
                   const Text(
@@ -46,9 +48,12 @@ class Headertitle extends StatelessWidget {
                   ),
                 ],
               ),
+            ]
+            else ...[
+              rightChild ?? const SizedBox.shrink(),
+            ]
           ],
         ),
-        
         child ?? const SizedBox.shrink(),
       ],
     );

@@ -11,7 +11,7 @@ class MostPopular extends StatelessWidget {
     List<String> arrival = ['Hot', 'Sale', 'New'];
     return Headertitle(
       lable_text: "Most Popular",
-      hasSeeAll: true,
+      hasSeeAll: "See All",
       child: SizedBox(
         height: 230,
         child: ListView.builder(

@@ -7,18 +7,21 @@ class CategoriesItem extends StatelessWidget {
   const CategoriesItem({super.key});
   @override
   Widget build(BuildContext context) {
+    List<String> productName = ['Clothing', 'Shoes', 'Bags', 'Lingerie'];
+    List<int> productCount = [150, 200, 120, 80];
+
     return Headertitle(
       lable_text: "Categories",
-      hasSeeAll: true,
+      hasSeeAll: "See All", // Set to empty string to hide "See All"
       child: SizedBox(
         child: GridView.builder(
           physics: NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            mainAxisSpacing: 8,
-            crossAxisSpacing: 8,
-            childAspectRatio:0.7
+            mainAxisSpacing: 8.0,
+            crossAxisSpacing: 8.0,
+            childAspectRatio: 2 / 2.6,
           ),
           padding: EdgeInsets.all(8),
           itemCount: 4,
@@ -31,46 +34,44 @@ class CategoriesItem extends StatelessWidget {
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black.withOpacity(0.05),
-                    blurRadius: 10,
-                    offset: const Offset(0, 4), // Changes position of shadow
+                    blurRadius: 12,
+                    offset: const Offset(0, 8), // Changes position of shadow
                   ),
                 ],
               ),
               child: Column(
                 children: [
-                  _buildImageGridItem(),
+                  Expanded(child: _buildImageGridItem()),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "Bags", // Or categories[index]
-                        style: GoogleFonts.poppins(
-                          fontSize: 10,
-                          fontWeight: FontWeight.w600,
+                        productName[index], // Or categories[index]
+                        style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.w700,
                           color: Colors.black,
                         ),
                       ),
-                      Container(
-                        // padding: const EdgeInsets.symmetric(
-                        //   horizontal: 10,
-                        //   vertical: 6,
-                        // ),
-                        decoration: BoxDecoration(
-                          color: const Color(
-                            0xFFF5F5F5,
-                          ), // Light grey background
-                          borderRadius: BorderRadius.circular(
-                            8,
-                          ), // Rounded corners
+                      Chip(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 7, 
+                          vertical: 7.0, 
                         ),
-                        child: Text(
-                          "109",
-                          // style: GoogleFonts.poppins(
-                          //   fontSize: 13,
-                          //   fontWeight: FontWeight.w500,
-                          //   color: Colors.black54, // Slightly faded text
-                          // ),
+                        side: BorderSide(color: Colors.transparent),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadiusGeometry.circular(16),
                         ),
+                        label: Text(
+                          "${productCount[index]}", // Or productCounts[index]
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.black,
+                          ),
+                        ),
+                        
+                        backgroundColor: Color(0xFFF3F3F3),
                       ),
                     ],
                   ),

@@ -10,7 +10,7 @@ class NewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Headertitle(
       lable_text: "New Items",
-      hasSeeAll: true,
+      hasSeeAll: "See All",
       child: SizedBox(
         height: 230,
         child: ListView.builder(

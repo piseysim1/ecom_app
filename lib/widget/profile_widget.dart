@@ -2,8 +2,8 @@ import 'package:e_comapp/contant/image.dart';
 import 'package:flutter/material.dart';
 
 class ProfileWidget extends StatelessWidget {
-  const ProfileWidget({super.key, required this.width, required this.height});
-  final String image = logopeople;
+  const ProfileWidget({super.key, required this.width, required this.height, required this.imageUrl});
+  final String imageUrl;
   final double width ;
   final double height;
   @override
@@ -32,7 +32,7 @@ class ProfileWidget extends StatelessWidget {
           child: ClipRRect(
             
             borderRadius: BorderRadius.circular(40),
-            child: Image.asset(image, fit: BoxFit.cover),
+            child: Image.network(imageUrl, fit: BoxFit.cover),
           ),
         ),
       ),
