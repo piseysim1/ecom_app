@@ -1,0 +1,27 @@
+const String background = "assets/images/Group1000004649.png";
+const String bluebackground = "assets/images/bubblle 03.png";
+const String bluebackground1 = "assets/images/bubble 02.png";
+const String bluebackground2 = "assets/images/bubble 05.png";
+const String bluebackground3 = "assets/images/bubble 04.png";
+const String bluebackground6 = "assets/images/bubble 06.png";
+const String bluebackground7 = "assets/images/bubble 07.png";
+const String cameraicon = "assets/images/camera icon.png";
+const String flagicon = "assets/images/FLAG.png";
+const String logopeople = "assets/images/artist-2 1.png";
+const String checkicon = "assets/images/Icon feather-check.png";
+const String Exclamtion = "assets/images/Exclamation.png";
+const String bluebackground8 = "assets/images/bubble 07 (2).png";
+const String slide1 = "assets/images/slide_1.png";
+const String slide2 = "assets/images/Placeholder_01.jpg";
+const String slide3 = "assets/images/Placeholder_01.jpg";
+const String iconsvg1 = "assets/images/scan-svgrepo-com.svg";
+const String iconsvg4 = "assets/images/Icon.png";
+const String iconsvg2 = "assets/images/menu-alt-04-svgrepo-com.svg";
+const String iconsvg3 = "assets/images/Icon feather-settings.svg";
+const String play = "assets/images/play-button-svgrepo-com.svg";
+const String homeSvg ="assets/images/home-svgrepo-com.svg";
+const String favoriteSvg ="assets/images/favorite-svgrepo-com.svg";
+const String historySvg ="assets/images/note-text-svgrepo-com.svg";
+const String cartSvg ="assets/images/shopping-bag-svgrepo-com.svg";
+const String profileSvg ="assets/images/profile-1335-svgrepo-com.svg";
+
